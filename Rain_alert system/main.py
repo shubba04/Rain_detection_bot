@@ -1,9 +1,9 @@
 import os
 import requests
 
-API_KEY = os.environ["API_KEY"]
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-CHAT_ID = os.environ["CHAT_ID"]
+API_KEY = os.environ.get["API_KEY"]
+BOT_TOKEN = os.environ.get["BOT_TOKEN"]
+CHAT_ID = os.environ.get["CHAT_ID"]
 
 LAT = 6.619831
 LON = 3.322167
@@ -42,3 +42,4 @@ if will_rain:
     send_telegram("It's going to rain\nYou should bring an umbrella")
 else:
     send_telegram("It's not going to rain")
+
