@@ -24,7 +24,7 @@ def send_telegram(message):
     notification = requests.post(url, data=payload)
     return notification.json()
 
-response = requests.get(url='https://api.openweathermap.org/data/2.5/forecast?',params=parameters)
+response = requests.get(url='https://api.openweathermap.org/data/2.5/forecast',params=parameters)
 response.raise_for_status()
 weather_data = response.json()["list"]
 
@@ -39,4 +39,5 @@ for info in weather_data:
 if will_rain:
     send_telegram("It's going to rain\nYou should bring an umbrella")
 else:
+
     send_telegram("It's not going to rain")
